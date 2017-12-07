@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="设置">
+
+    <ListPreference
+        android:defaultValue="0"
+        android:entries="@array/settings_search_by_labels"
+        android:entryValues="@array/settings_search_by_values"
+        android:key="@string/settings_search_by_key"
+        android:title="@string/settings_search_by_label"/>
+
+    <EditTextPreference
+        android:defaultValue="20"
+        android:inputType="number"
+        android:key="@string/settings_max_count_key"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/settings_max_count_label"/>
+
+</PreferenceScreen>

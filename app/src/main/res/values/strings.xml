@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">BookList</string>
+
+    <string name="et_hint_book_name">输入图书名</string>
+    <string name="btn_search">搜索</string>
+
+    <string name="settings_max_count_label">最大返回数量</string>
+    <string name="settings_max_count_key" translatable="false">max_count</string>
+    <string name="settings_max_count_default" translatable="false">10</string>
+
+    <string name="settings_search_by_label">设置查询API</string>
+    <string name="settings_search_by_key" translatable="false">search_by</string>
+    <string name="settings_search_by_default" translatable="false">@string/settings_search_by_douban_value</string>
+
+    <string name="settings_search_by_douban_label">豆瓣图书API</string>
+    <string name="settings_search_by_douban_value" translatable="false">douban</string>
+
+    <string name="settings_search_by_google_label">Google Book API</string>
+    <string name="settings_search_by_google_value" translatable="false">google</string>
+
+
+</resources>
