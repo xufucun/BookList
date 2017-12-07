@@ -3,6 +3,7 @@ package cn.xufucun.udacity.booklist;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,8 @@ import java.util.List;
  */
 
 public class BookAdapter extends ArrayAdapter<Book> {
+
+    private static final String TAG = "BookAdapter";
 
     public BookAdapter(@NonNull Context context, @NonNull List<Book> objects) {
         super(context,0,objects);
@@ -31,16 +34,27 @@ public class BookAdapter extends ArrayAdapter<Book> {
         }
 
         Book book = getItem(position);
+
         TextView bookName = view.findViewById(R.id.tv_book_name);
         TextView bookAuthor = view.findViewById(R.id.tv_book_author);
-        TextView firstName = view.findViewById(R.id.tv_first_name);
+        TextView firstWord = view.findViewById(R.id.tv_first_name);
 
-        bookName.setText(book.getBookName());
-        bookAuthor.setText(book.getBookAuthor());
+        if (book != null){
 
-        String fn = book.getBookName();
-        String fn1 = String.valueOf(fn.charAt(0));
-        firstName.setText(fn1);
+            String mBookName = book.getBookName();
+            String mBookAuthor = book.getBookAuthor();
+
+            if (mBookName.length() != 0){  //这是为了防止豆瓣有时候抽风
+
+                Log.d(TAG, "getView: "+book.getBookName());
+                String mFirstWord = String.valueOf(mBookName.charAt(0));
+
+                bookName.setText(mBookName);
+                bookAuthor.setText(mBookAuthor);
+                firstWord.setText(mFirstWord);
+            }
+
+        }
 
         return view;
     }

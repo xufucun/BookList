@@ -76,8 +76,6 @@ public class BookListActivity extends AppCompatActivity implements LoaderManager
         String maxCount = sharedPrefs.getString(getString(R.string.settings_max_count_key), getString(R.string.settings_max_count_default));
         String searchBy = sharedPrefs.getString(getString(R.string.settings_search_by_key), getString(R.string.settings_search_by_default));
 
-
-
         if (searchBy.equals("douban")){
             Uri baseUri = Uri.parse(DOUBAN_SERARCH_BOOK_URL);
             Uri.Builder uriBuilder = baseUri.buildUpon();

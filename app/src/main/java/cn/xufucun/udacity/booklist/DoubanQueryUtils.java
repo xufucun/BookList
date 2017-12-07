@@ -112,16 +112,16 @@ public class DoubanQueryUtils {
         try {
 
             JSONObject baseJsonResponse = new JSONObject(bookListJSON);
-            JSONArray bookLists = baseJsonResponse.getJSONArray("items");
+            JSONArray bookLists = baseJsonResponse.getJSONArray("books");
 
             for (int i = 0; i < bookLists.length(); i++) {
 
                 JSONObject bookList = bookLists.getJSONObject(i);
-                JSONObject volumeInfo = bookList.getJSONObject("volumeInfo");
+//                JSONObject volumeInfo = bookList.getJSONObject("volumeInfo");
 
-                String bookName = volumeInfo.getString("title"); //图书名称
-                String bookUrl = volumeInfo.getString("infoLink");
-                String bookAuthor = volumeInfo.getString("authors");
+                String bookName = bookList.getString("title"); //图书名称
+                String bookUrl = bookList.getString("alt");
+                String bookAuthor = bookList.getString("author");
 
                 Book earthquake = new Book(bookName,bookAuthor,bookUrl);
                 books.add(earthquake);
