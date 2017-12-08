@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
     public void btnSearch(View view) {
         String keyWords = bookKeyword.getText().toString();
 
-        if (keyWords.isEmpty()) {
+        //trim()可以去掉首尾的空格
+        if (  keyWords.trim().isEmpty()) {
             Toast.makeText(MainActivity.this, "请输入关键词", Toast.LENGTH_SHORT).show();
             return;
         }

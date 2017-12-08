@@ -40,6 +40,13 @@ public class BookListActivity extends AppCompatActivity implements LoaderManager
 
         keyWords = getIntent().getStringExtra("keyWords");
 
+        if (keyWords == null) {
+            //没有获取到关键字,对方没有传递该参数
+            finish();
+        }
+
+        keyWords = getIntent().getStringExtra("keyWords");
+
         ListView listView = findViewById(R.id.list);
         emptyTextView = findViewById(R.id.empty_view);
         listView.setEmptyView(emptyTextView);
