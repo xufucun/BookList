@@ -81,7 +81,7 @@ public class BookListActivity extends AppCompatActivity implements LoaderManager
             Uri.Builder uriBuilder = baseUri.buildUpon();
 
             uriBuilder.appendQueryParameter("q", keyWords);
-            uriBuilder.appendQueryParameter("maxResults", maxCount);
+            uriBuilder.appendQueryParameter("count", maxCount);
             Log.d(TAG, "onCreateLoader: "+ uriBuilder.toString());
             return new DoubanBookLoader(this, uriBuilder.toString());
         }else{
@@ -89,7 +89,7 @@ public class BookListActivity extends AppCompatActivity implements LoaderManager
             Uri.Builder uriBuilder = baseUri.buildUpon();
 
             uriBuilder.appendQueryParameter("q", keyWords);
-            uriBuilder.appendQueryParameter("count", maxCount);
+            uriBuilder.appendQueryParameter("maxResults", maxCount);
             Log.d(TAG, "onCreateLoader: "+ uriBuilder.toString());
             return new GoogleBookLoader(this, uriBuilder.toString());
         }
